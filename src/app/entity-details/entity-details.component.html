@@ -1,0 +1,14 @@
+<mat-card  *ngIf="entity">
+    <mat-card-content>
+      <div>Id: {{entity.Id}}</div>
+      <div>Name: {{entity.Name}}</div>
+      <div>Description: {{entity.Description}}</div>
+      <div>Amount: {{entity.Amount}}</div>
+      <div>Date: {{getDate(entity.Date)}}</div>
+      <div>IsPrivate: {{entity.IsPrivate}}</div>
+    </mat-card-content>
+
+</mat-card>
+
+
+

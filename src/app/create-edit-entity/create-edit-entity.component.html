@@ -1,0 +1,56 @@
+<div class="container">
+  <h1>{{title}}</h1>
+  <form (ngSubmit)="onSubmit(entityForm)" #entityForm="ngForm">
+
+    <div class="form-group">
+        <mat-form-field appearance="fill">
+            <mat-label>Name</mat-label>
+            <input type="text" matInput name="name"  maxlength="100" required ngModel>
+          </mat-form-field>
+
+    </div>
+
+    <div class="form-group">
+        <mat-form-field appearance="fill">
+            <mat-label>Description</mat-label>
+            <input type="text" matInput name="Description"   ngModel>
+          </mat-form-field>
+    </div>
+
+    <div class="form-group">
+        <mat-form-field appearance="fill">
+            <mat-label>Amount</mat-label>
+            <input type="number" matInput name="Amount"  maxlength="6"  ngModel>
+          </mat-form-field>
+    </div>
+
+    <div class="form-group">
+        <mat-form-field>
+            <input matInput [matDatepicker]="picker" placeholder="Choose a date"
+                 name="Date" ngModel>
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+
+          <!--
+      <label for="Date">Date</label>
+      <input type="text" class="form-control" id="Date" name="Date"  ngModel>
+          -->
+    </div>
+
+    <div class="form-group">
+        <mat-checkbox ngModel name="IsPrivate">Private</mat-checkbox>
+        <!--
+      <label for="IsPrivate">IsPrivate</label>
+      <input type="text" class="form-control" id="IsPrivate" name="IsPrivate" ngModel>
+      -->
+    </div>
+
+
+
+
+
+    <button  mat-raised-button type="submit" color="primary" class="btn btn-success" [disabled]="!entityForm.form.valid">Submit</button>
+  </form>
+</div>
+
